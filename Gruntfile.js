@@ -244,6 +244,18 @@ module.exports = function (grunt) {
                         'images/{,*/}*.{webp,gif}'
                     ]
                 }]
+            },
+            js: {
+                files: [{
+                    expand: true,
+                    dot: true,
+                    cwd: '.tmp/scripts/',
+                    dest: '<%= yeoman.dist %>/scripts/',
+                    src:[
+                        'app/{,*/}*.js',
+                        '{,*/}*.js'
+                    ]
+                }]
             }
         },
         bower: {
@@ -258,7 +270,7 @@ module.exports = function (grunt) {
                     amd: true
                 },
                 files: {
-                    '.tmp/scripts/templates.js': ['<%= yeoman.app %>/scripts/templates/*.hbs']
+                    '.tmp/scripts/templates.js': ['<%= yeoman.app %>/scripts/app/templates/*.hbs']
                 }
             }
         }
@@ -312,7 +324,8 @@ module.exports = function (grunt) {
         'cssmin',
         'uglify',
         'copy',
-        'usemin'
+        'usemin',
+        'copy:js'
     ]);
 
     grunt.registerTask('default', [
