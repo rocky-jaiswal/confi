@@ -244,18 +244,6 @@ module.exports = function (grunt) {
                         'images/{,*/}*.{webp,gif}'
                     ]
                 }]
-            },
-            js: {
-                files: [{
-                    expand: true,
-                    dot: true,
-                    cwd: '.tmp/scripts/',
-                    dest: '<%= yeoman.dist %>/scripts/',
-                    src:[
-                        'app/{,*/}*.js',
-                        '{,*/}*.js'
-                    ]
-                }]
             }
         },
         bower: {
@@ -324,8 +312,7 @@ module.exports = function (grunt) {
         'cssmin',
         'uglify',
         'copy',
-        'usemin',
-        'copy:js'
+        'usemin'
     ]);
 
     grunt.registerTask('default', [
