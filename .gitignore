@@ -4,3 +4,5 @@ dist
 .sass-cache
 app/bower_components
 .tmp/
+app/scripts/*.js
+app/scripts/app/**/*.js

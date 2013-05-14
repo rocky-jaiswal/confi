@@ -13,5 +13,10 @@ define ["jquery", "backbone", "app/views/home", "app/views/speaker", "app/views/
 
     speakers: ->
       new SpeakerView()
-      @header.render({speakers: true})
+      if @header
+        @header.render({speakers: true})
+      else
+        @header = new HeaderView({router: @})
+        @header.render({speakers :true})
+
 
