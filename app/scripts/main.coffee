@@ -12,7 +12,7 @@ require.config
 
     bootstrap:
       deps: ["jquery"]
-      exports: "jquery"
+      exports: "Bootstrap"
 
     handlebars:
       exports: "Handlebars"
@@ -24,8 +24,8 @@ require.config
     underscore: "../bower_components/underscore-amd/underscore"
     bootstrap: "vendor/bootstrap"
     text: "../bower_components/requirejs-text/text"
-    handlebars: "../bower_components/handlebars.js/handlebars"
+    handlebars: "../bower_components/handlebars.js/dist/handlebars"
 
-require ["backbone", "app/router/router"], (Backbone, AppRouter) ->
+require ["backbone", "bootstrap", "app/router/router"], (Backbone, Bootstrap, AppRouter) ->
   router = new AppRouter()
   Backbone.history.start()
