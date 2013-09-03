@@ -1,22 +1,18 @@
-define ["jquery", "backbone", "app/views/home", "app/views/speaker", "app/views/header"], ($, Backbone, HomeView, SpeakerView, HeaderView) ->
+define ["jquery", "backbone", "app/views/about", "app/views/contact", "app/views/home"], ($, Backbone, AboutView, ContactView, HomeView) ->
  
   class AppRouter extends Backbone.Router
     
     routes:
-      ""                    : "home"
-      "speakers"            : "speakers"
+      ""         : "home"
+      "about"    : "about"
+      "contact"  : "contact"
+      "home"     : "home"
 
     home: ->
       new HomeView()
-      @header = new HeaderView({router: @})
-      @header.render({home :true})
 
-    speakers: ->
-      new SpeakerView()
-      if @header
-        @header.render({speakers: true})
-      else
-        @header = new HeaderView({router: @})
-        @header.render({speakers :true})
+    about: ->
+      new AboutView()
 
-
+    contact: ->
+      new ContactView()

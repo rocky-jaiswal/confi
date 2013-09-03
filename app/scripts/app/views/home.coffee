@@ -12,3 +12,5 @@ define ["jquery", "underscore", "backbone", "handlebars", "text!../templates/hom
 
     render: ->
       $(@el).html(@template)
+      $(".jumbotron").slideDown()
+      $(".jumbotron").removeClass("hidden")

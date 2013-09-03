@@ -1,6 +1,4 @@
-#global require
 "use strict"
-
 require.config
   shim:
     underscore:
@@ -12,20 +10,19 @@ require.config
 
     bootstrap:
       deps: ["jquery"]
-      exports: "Bootstrap"
+      exports: "jquery"
 
     handlebars:
       exports: "Handlebars"
 
   paths:
     jquery: "../bower_components/jquery/jquery"
-    jquery_form: "../bower_components/jquery-form/jquery.form"
-    backbone: "../bower_components/backbone-amd/backbone"
-    underscore: "../bower_components/underscore-amd/underscore"
+    backbone: "../bower_components/backbone/backbone"
+    underscore: "../bower_components/underscore/underscore"
     bootstrap: "vendor/bootstrap"
+    handlebars: "../bower_components/handlebars/handlebars"
     text: "../bower_components/requirejs-text/text"
-    handlebars: "../bower_components/handlebars.js/dist/handlebars"
 
-require ["backbone", "bootstrap", "app/router/router"], (Backbone, Bootstrap, AppRouter) ->
+require ["backbone", "app/router/router"], (Backbone, AppRouter) ->
   router = new AppRouter()
   Backbone.history.start()
